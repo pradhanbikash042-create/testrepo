@@ -1,2 +1,44 @@
-my name is bikash 
-i am from odisha
+#!/usr/bin/env python3
+"""
+Personal Information Module
+Provides functions to manage and display personal details
+"""
+
+class Person:
+    """A class to represent a person with their details"""
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+    
+    def introduce(self):
+        """Return a formatted introduction"""
+        return f"Hi, my name is {self.name} and I am from {self.location}"
+    
+    def get_info(self):
+        """Return person info as dictionary"""
+        return {
+            "name": self.name,
+            "location": self.location
+        }
+    
+    def __str__(self):
+        """String representation"""
+        return self.introduce()
+
+
+# Create a person instance
+person = Person("Bikash", "Odisha")
+
+# Functionality
+def display_info():
+    """Display personal information"""
+    print(person.introduce())
+
+def get_details():
+    """Get person details"""
+    return person.get_info()
+
+if __name__ == "__main__":
+    display_info()
+    print(f"Details: {get_details()}")
